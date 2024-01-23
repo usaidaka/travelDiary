@@ -7,4 +7,10 @@ export default {
   app_popup_error_title: 'Something went wrong!',
   app_popup_error_message: 'Sorry, an error has occurred. Please try again later',
   app_popup_close_button_label: 'Close',
+  form_auth_login_title: 'Login',
+  form_auth_register_title: 'Register',
+  form_auth_full_name: 'Full name',
+  form_auth_email: 'Email',
+  form_auth_password: 'Password',
+  dont_have_account: "Don't have an account? ? Click Here",
 };

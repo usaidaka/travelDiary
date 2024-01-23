@@ -7,4 +7,10 @@ export default {
   app_popup_error_title: 'Terjadi kesalahan!',
   app_popup_error_message: 'Maaf, telah terjadi kesalahan. Silakan coba beberapa saat lagi',
   app_popup_close_button_label: 'Tutup',
+  form_auth_login_title: 'Masuk',
+  form_auth_register_title: 'Daftar',
+  form_auth_full_name: 'Nama Lengkap',
+  form_auth_email: 'Surel',
+  form_auth_password: 'Kata sandi',
+  dont_have_account: 'Tidak punya account? Klik disini',
 };
