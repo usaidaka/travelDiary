@@ -17,4 +17,18 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-size: cover;
+    }
+  }
 }

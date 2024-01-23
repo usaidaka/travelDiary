@@ -1,0 +1,70 @@
+@import '@styles/base';
+
+.header {
+  height: 510px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.24702380952380953) 45%, rgba(0, 0, 0, 0) 100%),
+    url('../../../../assets/header.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include apply-at-xs-size {
+    background-position: center;
+    height: 100%;
+  }
+
+  .header-wrapper {
+    margin-left: 100px;
+    @include apply-at-xs-size {
+      margin-left: 0px;
+    }
+    @include apply-at-xxl-size {
+      margin-left: 100px;
+    }
+
+    .header-primary {
+      width: 650px;
+      font-family: $roboto;
+      color: white;
+      font-weight: 100;
+      font-style: italic;
+      font-size: 80px;
+      letter-spacing: 0px;
+      line-height: 70px;
+      @include apply-at-xs-size {
+        font-size: 40px;
+        text-align: center;
+        letter-spacing: 0px;
+        line-height: 40px;
+        width: 100%;
+      }
+      @include apply-at-xxl-size {
+        font-size: 80px;
+        text-align: inherit;
+        letter-spacing: 0px;
+        line-height: 70px;
+        width: 650px;
+      }
+    }
+
+    .header-secondary {
+      width: 650px;
+      font-family: $roboto;
+      color: white;
+      font-weight: 100;
+      font-style: italic;
+      font-size: 100px;
+      @include apply-at-xs-size {
+        text-align: center;
+        font-size: 15px;
+        width: 100%;
+      }
+      @include apply-at-xxl-size {
+        font-size: 20px;
+        text-align: inherit;
+        width: 650px;
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ const Register = () => {
           <Typography className={classes.title}>
             <FormattedMessage id="form_auth_register_title" />
           </Typography>
-          <form action={onSubmit} className={classes['form-container']}>
+          <form action="" onSubmit={onSubmit} className={classes['form-container']}>
             <Box>
               <Box className={classes.form}>
                 <label htmlFor="fullName-login">

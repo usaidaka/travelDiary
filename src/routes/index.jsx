@@ -4,6 +4,9 @@ import Home from '@pages/Home';
 import Login from '@pages/Login';
 import Register from '@pages/Register';
 import NotFound from '@pages/NotFound';
+import Bookmark from '@pages/Bookmark';
+import Profile from '@pages/Profile';
+import Post from '@pages/Post';
 
 const routes = [
   {
@@ -25,6 +28,27 @@ const routes = [
     name: 'Register',
     protected: false,
     component: Register,
+    layout: MainLayout,
+  },
+  {
+    path: '/bookmark',
+    name: 'Bookmark',
+    protected: false,
+    component: Bookmark,
+    layout: MainLayout,
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    protected: false,
+    component: Profile,
+    layout: MainLayout,
+  },
+  {
+    path: '/post',
+    name: 'Post',
+    protected: false,
+    component: Post,
     layout: MainLayout,
   },
   { path: '*', name: 'Not Found', component: NotFound, layout: MainLayout, protected: false },

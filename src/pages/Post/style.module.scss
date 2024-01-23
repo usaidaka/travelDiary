@@ -1,0 +1,122 @@
+@import '@styles/base';
+
+.container {
+  height: 100%;
+
+  .uploader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .upload-image {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #a6a6a6;
+      background-color: white;
+      width: 100%;
+      height: 100px;
+      top: 247px;
+      left: 90px;
+      border-radius: 5px;
+      @include apply-at-xl-size {
+        height: 200px;
+      }
+
+      button {
+        width: fit-content;
+      }
+    }
+
+    .upload-title {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .label {
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      input {
+        height: 50px;
+        top: 542px;
+        left: 90px;
+        border-radius: 5px;
+        border: 1px;
+      }
+    }
+
+    .upload-short-description {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .label {
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+      input {
+        height: 50px;
+        top: 542px;
+        left: 90px;
+        border-radius: 5px;
+        border: 1px;
+      }
+    }
+
+    .upload-description {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .label {
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      .quill {
+        height: 265px;
+        display: block;
+        background-color: white;
+        @include apply-at-xl-size {
+          height: 290px;
+        }
+      }
+
+      .quill-form {
+        height: 200px;
+        border-radius: 5px;
+        display: block;
+        background-color: white;
+
+        @include apply-at-xl-size {
+          height: 250px;
+        }
+      }
+    }
+  }
+  .submit {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 20px 0px;
+
+    button {
+      width: fit-content;
+    }
+  }
+}

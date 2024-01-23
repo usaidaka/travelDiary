@@ -13,4 +13,16 @@ export default {
   form_auth_email: 'Surel',
   form_auth_password: 'Kata sandi',
   dont_have_account: 'Tidak punya account? Klik disini',
+  header_primary: 'Perjalanan yang pernah Anda impikan',
+  header_secondary:
+    'Kami membuat alat sehingga Anda dapat dengan mudah menyimpan & berbagi kenangan perjalanan Anda.Tapi masih banyak lagi',
+  journey: 'Petualangan',
+  search: 'Cari',
+  bookmark: 'Ditandai',
+  profile: 'Profil',
+  add_new_post: 'Buat Post Baru',
+  new_journey: 'Petualangan Baru',
+  title: 'Judul',
+  short_description: 'Deskripsi Singkat',
+  description: 'Deskripsi',
 };

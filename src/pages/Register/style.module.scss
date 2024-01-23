@@ -1,7 +1,5 @@
 @import '@styles/base';
 
-@import '@styles/base';
-
 .container {
   width: 100%;
   min-height: 90vh;
@@ -21,6 +19,9 @@
     @include apply-at-xs-size {
       width: 350px;
     }
+    @include apply-at-md-size {
+      width: 350px;
+    }
 
     .card-wrapper {
       height: 100%;
@@ -30,6 +31,9 @@
       justify-content: center;
       align-items: center;
       @include apply-at-xs-size {
+        padding: 0px;
+      }
+      @include apply-at-md-size {
         padding: 0px;
       }
 
@@ -43,6 +47,9 @@
         @include apply-at-xs-size {
           margin-top: 30px;
         }
+        @include apply-at-md-size {
+          margin-top: 30px;
+        }
       }
 
       .form-container {
@@ -52,6 +59,9 @@
         flex-direction: column;
         justify-content: space-between;
         @include apply-at-xs-size {
+          margin-top: 10px;
+        }
+        @include apply-at-md-size {
           margin-top: 10px;
         }
 
@@ -70,6 +80,9 @@
             @include apply-at-xs-size {
               margin-bottom: 10px;
             }
+            @include apply-at-md-size {
+              margin-bottom: 10px;
+            }
           }
 
           input {
@@ -82,12 +95,18 @@
             @include apply-at-xs-size {
               width: 300px;
             }
+            @include apply-at-md-size {
+              width: 300px;
+            }
           }
         }
 
         .button {
           margin-bottom: 20px;
           @include apply-at-xs-size {
+            margin-bottom: 30px;
+          }
+          @include apply-at-md-size {
             margin-bottom: 30px;
           }
 
