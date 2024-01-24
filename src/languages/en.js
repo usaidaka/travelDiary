@@ -24,4 +24,5 @@ export default {
   title: 'Title',
   short_description: 'Short Description',
   description: 'Description',
+  logout: 'Logout',
 };

@@ -25,4 +25,5 @@ export default {
   title: 'Judul',
   short_description: 'Deskripsi Singkat',
   description: 'Deskripsi',
+  logout: 'Keluar',
 };

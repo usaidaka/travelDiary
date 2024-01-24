@@ -2,6 +2,17 @@
 
 .container {
   height: 100vh;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  @include apply-at-lg-size {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .title {
+    margin: 30px 0px 60px;
+  }
 
   .content-wrapper {
     display: grid;

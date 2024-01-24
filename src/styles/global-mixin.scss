@@ -1,0 +1,10 @@
+@mixin error-validation {
+  color: red;
+  font-size: 12px;
+  text-align: end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 70px;
+  z-index: 0;
+}

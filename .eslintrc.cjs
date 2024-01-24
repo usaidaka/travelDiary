@@ -42,6 +42,8 @@ module.exports = {
     'default-case': 'off',
     'arrow-body-style': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
+    'react/no-unknown-property': 'off',
+    'react/prop-types': 'off',
     'react/function-component-definition': [
       2,
       {

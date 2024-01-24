@@ -1,14 +1,14 @@
 import { Box, Typography } from '@mui/material';
+import PropTypes from 'prop-types';
 
-import image1 from '../../assets/card1.png';
 import bookmark from '../../assets/bookmark.png';
 import classes from './style.module.scss';
 
-const CardPost = () => {
+const CardPost = ({ img, title, date, shortDesc }) => {
   return (
     <Box className={classes['card-container']}>
       <Box className={classes['image-container']}>
-        <img src={image1} alt="" />
+        <img src={img} alt="" />
         <Box className={classes.bookmark}>
           <img src={bookmark} alt="" />
         </Box>
@@ -16,18 +16,25 @@ const CardPost = () => {
       <Box className={classes['content-container']}>
         <Box className={classes['title-wrapper']}>
           <Typography variant="body1" color="initial" className={classes.title}>
-            Bersemayam di tanah dewata
+            {title}
           </Typography>
           <Typography variant="body1" color="initial" className={classes.date}>
-            20 July 2020,Cipto
+            {date}
           </Typography>
         </Box>
         <Typography variant="body1" color="initial" className={classes['text-content']}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, facere quo. Quis minus ipsum alias iste illum ?
+          {shortDesc}
         </Typography>
       </Box>
     </Box>
   );
+};
+
+CardPost.propTypes = {
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  date: PropTypes.string,
+  shortDesc: PropTypes.string.isRequired,
 };
 
 export default CardPost;

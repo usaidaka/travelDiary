@@ -1,5 +1,9 @@
 @import '@styles/base';
 
+.error {
+  @include error-validation;
+}
+
 .container {
   width: 100%;
   min-height: 90vh;
@@ -7,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 
   .card-container {
     display: flex;
@@ -68,6 +73,17 @@
         .form {
           display: flex;
           flex-direction: column;
+          position: relative;
+
+          .password {
+            height: 100%;
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            right: 0;
+            bottom: 0;
+            margin-bottom: 6px;
+          }
 
           label {
             color: #000;
@@ -92,6 +108,7 @@
             width: 350px;
             height: 50px;
             flex-shrink: 0;
+            padding-left: 20px;
             @include apply-at-xs-size {
               width: 300px;
             }

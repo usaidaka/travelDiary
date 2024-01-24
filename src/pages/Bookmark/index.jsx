@@ -7,7 +7,7 @@ import classes from './style.module.scss';
 const Bookmark = () => {
   return (
     <Box className={classes.container}>
-      <Typography variant="h3" color="initial" fontWeight={600}>
+      <Typography variant="h3" color="initial" fontWeight={600} className={classes.title}>
         <FormattedMessage id="bookmark" />
       </Typography>
 

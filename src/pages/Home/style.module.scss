@@ -1,20 +1,42 @@
 @import '@styles/base';
-
 .container {
   height: 100vh;
-
-  .content-wrapper {
-    display: grid;
-    justify-content: space-evenly;
-    justify-items: center;
-    align-content: space-evenly;
-    align-items: center;
-    @include apply-at-xs-size {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
+  .wrapper {
+    height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
     @include apply-at-lg-size {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .title {
+      font-family: Roboto;
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 56px;
+      letter-spacing: 0em;
+      text-align: left;
+      margin: 40px 0px;
+      @include apply-at-lg-size {
+        padding-left: 30px;
+      }
+    }
+
+    .content-wrapper {
+      display: grid;
+      justify-content: space-evenly;
+      justify-items: center;
+      align-content: space-evenly;
+      align-items: center;
+      margin: 20px 0px;
+      @include apply-at-xs-size {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      @include apply-at-lg-size {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
     }
   }
 }
