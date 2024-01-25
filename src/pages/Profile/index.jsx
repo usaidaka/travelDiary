@@ -4,22 +4,26 @@ import { useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
+import { selectLogin } from '@containers/Client/selectors';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CardPost from '@components/CardPost';
 import classes from './style.module.scss';
 import photoProfile from '../../assets/photoProfile.png';
-import { getMyPost } from './actions';
-import { selectMyPost } from './selectors';
+import { getMyPost, getMyProfile } from './actions';
+import { selectMyPost, selectMyProfile } from './selectors';
 
-const Profile = ({ myPosts }) => {
+const Profile = ({ myPosts, login, myProfile }) => {
   const dispatch = useDispatch();
-
-  console.log(myPosts);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if (!login) {
+      navigate('/');
+    }
+    dispatch(getMyProfile());
     dispatch(getMyPost());
-  }, [dispatch]);
+  }, [dispatch, login, navigate]);
 
   return (
     <Box className={classes.container}>
@@ -31,10 +35,10 @@ const Profile = ({ myPosts }) => {
         <img src={photoProfile} alt="" />
         <Box className={classes.text}>
           <Typography variant="body1" color="initial" className={classes.text1}>
-            Fadil
+            {myProfile?.profile?.fullname}
           </Typography>
           <Typography variant="body1" color="initial" className={classes.text2}>
-            fadil@gmail.com
+            {myProfile?.profile?.email}
           </Typography>
         </Box>
         <Link to="/post">
@@ -66,10 +70,14 @@ const Profile = ({ myPosts }) => {
 Profile.propType = {
   myPosts: PropTypes.array,
   length: PropTypes.number,
+  login: PropTypes.bool,
+  myProfile: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
   myPosts: selectMyPost,
+  login: selectLogin,
+  myProfile: selectMyProfile,
 });
 
 export default connect(mapStateToProps)(Profile);

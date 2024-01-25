@@ -4,14 +4,13 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 
 import { CREATE_POST } from './constants';
 
-function* doCreatePost({ postData, cbSuccess, cbFailed }) {
+function* doCreatePost({ postData, callback }) {
   yield put(setLoading(true));
   try {
     yield call(createPost, postData);
-
-    cbSuccess && cbSuccess();
+    callback && callback();
   } catch (error) {
-    cbFailed(error.response?.data?.message);
+    console.log(error);
   }
   yield put(setLoading(false));
 }

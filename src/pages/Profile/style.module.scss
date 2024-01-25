@@ -6,7 +6,7 @@
   padding-right: 20px;
 
   .title {
-    margin-top: 100px;
+    margin-top: 60px;
   }
 
   .content-wrapper {
@@ -15,6 +15,7 @@
     justify-items: center;
     align-content: space-evenly;
     align-items: center;
+    margin-top: 100px;
     @include apply-at-xs-size {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
@@ -36,7 +37,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 10px 0px;
+      margin: 20px 0px;
 
       .text1 {
         font-family: Roboto;

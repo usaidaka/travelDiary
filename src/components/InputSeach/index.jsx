@@ -3,11 +3,11 @@ import { FormattedMessage } from 'react-intl';
 
 import classes from './style.module.scss';
 
-const InputSearch = () => {
+const InputSearch = ({ setter, action }) => {
   return (
     <Box className={classes['input-container']}>
-      <input type="text" placeholder="" />
-      <Button variant="contained">
+      <input type="text" placeholder="" onChange={(e) => setter(e.target.value)} />
+      <Button variant="contained" onClick={() => action()}>
         <FormattedMessage id="search" />
       </Button>
     </Box>

@@ -13,12 +13,12 @@ const urls = {
   createPost: 'post/create',
   myPost: 'post/my-post',
   allPost: 'post',
-  deletePost: 'post/remove/:id',
-  detailPost: 'post/detail/:id',
+  deletePost: 'post/remove',
+  detailPost: 'post/detail',
 
   createBookmark: 'bookmark/create',
   allBookmark: 'bookmark',
-  deleteBookmark: 'bookmark/remove/:id',
+  deleteBookmark: 'bookmark/remove',
 };
 
 export const callAPI = async (endpoint, method, header = {}, params = {}, data = {}) => {
@@ -57,6 +57,6 @@ export const deletePost = (id) => callAPI(`${urls.deletePost}/${id}`, 'DELETE');
 export const detailPost = (id) => callAPI(`${urls.detailPost}/${id}`, 'GET');
 
 // BOOKMARK
-export const createBookmark = (bookmarkData) => callAPI(urls.createBookmark, 'POST', {}, {}, bookmarkData);
+export const createBookmark = (postId) => callAPI(urls.createBookmark, 'POST', {}, {}, postId);
 export const allBookmark = () => callAPI(urls.allBookmark, 'GET');
 export const deleteBookmark = (id) => callAPI(`${urls.deleteBookmark}/${id}`, 'DELETE');

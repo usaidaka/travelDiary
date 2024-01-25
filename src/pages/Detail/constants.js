@@ -1,0 +1,2 @@
+export const GET_POST_DETAIL = 'GET_POST_DETAIL';
+export const SET_POST_DETAIL = 'SET_POST_DETAIL';

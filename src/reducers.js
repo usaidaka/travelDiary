@@ -6,8 +6,10 @@ import loginReducer, { storedLoginState } from '@pages/Login/reducer';
 import languageReducer from '@containers/Language/reducer';
 import homeReducer, { storedHomeKey } from '@pages/Home/reducer';
 import profileReducer, { storedProfileKey } from '@pages/Profile/reducer';
-
+import detailReducer, { storedDetailKey } from '@pages/Detail/reducer';
 import registerReducer, { storedRegisterState } from '@pages/Register/reducer';
+import bookmarkReducer, { storedBookmarkKey } from '@pages/Bookmark/reducer';
+
 import { mapWithPersistor } from './persistence';
 
 const storedReducers = {
@@ -17,6 +19,8 @@ const storedReducers = {
   login: { reducer: loginReducer, whitelist: storedLoginState },
   home: { reducer: homeReducer, whitelist: storedHomeKey },
   profile: { reducer: profileReducer, whitelist: storedProfileKey },
+  detail: { reducer: detailReducer, whitelist: storedDetailKey },
+  bookmark: { reducer: bookmarkReducer, whitelist: storedBookmarkKey },
 };
 
 const temporaryReducers = {

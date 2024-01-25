@@ -7,6 +7,7 @@ import NotFound from '@pages/NotFound';
 import Bookmark from '@pages/Bookmark';
 import Profile from '@pages/Profile';
 import Post from '@pages/Post';
+import Detail from '@pages/Detail';
 
 const routes = [
   {
@@ -49,6 +50,13 @@ const routes = [
     name: 'Post',
     protected: false,
     component: Post,
+    layout: MainLayout,
+  },
+  {
+    path: '/post/:id',
+    name: 'Detail',
+    protected: false,
+    component: Detail,
     layout: MainLayout,
   },
   { path: '*', name: 'Not Found', component: NotFound, layout: MainLayout, protected: false },

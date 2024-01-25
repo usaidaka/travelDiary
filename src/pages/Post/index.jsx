@@ -2,16 +2,18 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import { FormattedMessage } from 'react-intl';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useRef, useState } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
-import { createPost } from '@domain/api';
 import { useNavigate } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
+import { createStructuredSelector } from 'reselect';
+import { selectLogin } from '@containers/Client/selectors';
 import upload from '../../assets/upload.png';
 import classes from './style.module.scss';
+import { createPost } from './actions';
 
-const Post = () => {
+const Post = ({ login }) => {
   const [image, setImage] = useState(null);
   const [showImage, setShowImage] = useState(false);
   const navigate = useNavigate();
@@ -32,7 +34,13 @@ const Post = () => {
     setImage(selectedImage);
   };
 
-  const onSubmit = async (data) => {
+  useEffect(() => {
+    if (!login) {
+      navigate('/');
+    }
+  }, [login, navigate]);
+
+  const onSubmit = (data) => {
     const formData = new FormData();
     formData.append('imageUrl', image);
     formData.append('title', data.title);
@@ -40,14 +48,10 @@ const Post = () => {
     formData.append('description', data.description);
 
     dispatch(
-      createPost(
-        formData,
-        () => {
-          navigate('/profile');
-          reset();
-        },
-        (err) => console.log(err)
-      )
+      createPost(formData, () => {
+        navigate('/profile');
+        reset();
+      })
     );
   };
 
@@ -146,4 +150,12 @@ const Post = () => {
   );
 };
 
-export default Post;
+Post.propTypes = {
+  login: PropTypes.bool,
+};
+
+const mapStateToProps = createStructuredSelector({
+  login: selectLogin,
+});
+
+export default connect(mapStateToProps)(Post);
